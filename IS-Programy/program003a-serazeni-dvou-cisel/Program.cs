@@ -1,30 +1,46 @@
-﻿string again = "a";
+﻿using System.Runtime.InteropServices.Marshalling;
+
+string again = "a";
 while (again == "a")
 {
     Console.Clear();
     Console.WriteLine("**********************************************");
-    Console.WriteLine("************* Název programu *************");
+    Console.WriteLine("************* Řazení dvou čísel *************");
     Console.WriteLine("**********************************************");
     Console.WriteLine("**************** Tomáš Žižka *****************");
-    Console.WriteLine("**************** Aktuální datum ******************");
+    Console.WriteLine("**************** 23.10.2025 ******************");
     Console.WriteLine("**********************************************");
     Console.WriteLine();
 
-    // Vstup hodnoty do programu
-    Console.Write("Zadejte první číslo řady (celé číslo): ");
-    int first;
-    while (!int.TryParse(Console.ReadLine(), out first))
+    
+    Console.Write("Zadejte celé číslo A: ");
+    int a;
+    while (!int.TryParse(Console.ReadLine(), out a))
     {
-        Console.Write("Nezadali jste celé číslo. Zadejte první číslo řady znovu: ");
+        Console.Write("Nezadali jste celé číslo. Zadejte celé číslo A znovu: ");
+    }
+
+    Console.Write("Zadejte celé číslo B: ");
+    int b;
+    while (!int.TryParse(Console.ReadLine(), out b))
+    {
+        Console.Write("Nezadali jste celé číslo. Zadejte celé číslo B znovu: ");
     }
 
 
+    Console.WriteLine();
+    int pom;
+    if (a > b)
+    {
+        pom = a;
+        a = b;
+        b = pom;
+        Console.WriteLine("Došlo k prohození proměnných...");
+    }
 
-
-
-
-
-
+    Console.WriteLine("========================================");
+    Console.WriteLine($"Seřazená čísla: {a}, {b}");
+    Console.WriteLine("========================================");
 
 
     Console.WriteLine();
